@@ -49,6 +49,7 @@
             detenerToolStripMenuItem = new ToolStripMenuItem();
             lblGeneracion = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            lblEstado = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -74,7 +75,6 @@
             rbBajo.Name = "rbBajo";
             rbBajo.Size = new Size(48, 19);
             rbBajo.TabIndex = 6;
-            rbBajo.TabStop = true;
             rbBajo.Text = "Bajo";
             rbBajo.UseVisualStyleBackColor = true;
             // 
@@ -85,7 +85,6 @@
             rbMedio.Name = "rbMedio";
             rbMedio.Size = new Size(59, 19);
             rbMedio.TabIndex = 5;
-            rbMedio.TabStop = true;
             rbMedio.Text = "Medio";
             rbMedio.UseVisualStyleBackColor = true;
             // 
@@ -93,6 +92,7 @@
             // 
             rbAlto.AutoSize = true;
             rbAlto.CausesValidation = false;
+            rbAlto.Checked = true;
             rbAlto.Location = new Point(18, 31);
             rbAlto.Name = "rbAlto";
             rbAlto.Size = new Size(47, 19);
@@ -120,7 +120,6 @@
             rbAmarillo.Name = "rbAmarillo";
             rbAmarillo.Size = new Size(70, 19);
             rbAmarillo.TabIndex = 2;
-            rbAmarillo.TabStop = true;
             rbAmarillo.Text = "Amarillo";
             rbAmarillo.UseVisualStyleBackColor = true;
             // 
@@ -131,13 +130,13 @@
             rbAzul.Name = "rbAzul";
             rbAzul.Size = new Size(48, 19);
             rbAzul.TabIndex = 1;
-            rbAzul.TabStop = true;
             rbAzul.Text = "Azul";
             rbAzul.UseVisualStyleBackColor = true;
             // 
             // rbRojo
             // 
             rbRojo.AutoSize = true;
+            rbRojo.Checked = true;
             rbRojo.Location = new Point(17, 29);
             rbRojo.Name = "rbRojo";
             rbRojo.Size = new Size(49, 19);
@@ -165,7 +164,6 @@
             rbGrande.Name = "rbGrande";
             rbGrande.Size = new Size(63, 19);
             rbGrande.TabIndex = 2;
-            rbGrande.TabStop = true;
             rbGrande.Text = "Grande";
             rbGrande.UseVisualStyleBackColor = true;
             // 
@@ -176,13 +174,13 @@
             rbNormal.Name = "rbNormal";
             rbNormal.Size = new Size(65, 19);
             rbNormal.TabIndex = 1;
-            rbNormal.TabStop = true;
             rbNormal.Text = "Normal";
             rbNormal.UseVisualStyleBackColor = true;
             // 
             // rbPequeno
             // 
             rbPequeno.AutoSize = true;
+            rbPequeno.Checked = true;
             rbPequeno.Location = new Point(17, 30);
             rbPequeno.Name = "rbPequeno";
             rbPequeno.Size = new Size(72, 19);
@@ -238,9 +236,10 @@
             // lblGeneracion
             // 
             lblGeneracion.AutoSize = true;
+            lblGeneracion.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblGeneracion.Location = new Point(30, 196);
             lblGeneracion.Name = "lblGeneracion";
-            lblGeneracion.Size = new Size(67, 15);
+            lblGeneracion.Size = new Size(77, 17);
             lblGeneracion.TabIndex = 4;
             lblGeneracion.Text = "Generación";
             // 
@@ -248,11 +247,21 @@
             // 
             timer1.Interval = 2000;
             // 
+            // lblEstado
+            // 
+            lblEstado.AutoSize = true;
+            lblEstado.Location = new Point(286, 196);
+            lblEstado.Name = "lblEstado";
+            lblEstado.Size = new Size(108, 15);
+            lblEstado.TabIndex = 5;
+            lblEstado.Text = "Estado: sin ejecutar";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(706, 474);
+            ClientSize = new Size(706, 555);
+            Controls.Add(lblEstado);
             Controls.Add(lblGeneracion);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -260,7 +269,7 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
-            Text = "Algoritmos Geneticos";
+            Text = "Algoritmos Geneticos  - Inteligencia Artificial - Equipo 3";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -295,5 +304,6 @@
         private RadioButton rbPequeno;
         private Label lblGeneracion;
         private System.Windows.Forms.Timer timer1;
+        private Label lblEstado;
     }
 }

@@ -1,5 +1,28 @@
 namespace AlgoritmosGeneticos
 {
+    /*
+                                         TAREA 22 - A
+            DESCRIPCIÓN: 
+            El programa mostrará como nuevas generaciones son creadas;
+            cada una de ellas tratará de resolver mejor el problema 
+            presentado. En nuestro programa, tendremos una poblacion
+            de flores, y el usuario podrá seleccionar caracteristicas
+            que le interesan en las flores, por ejemplo, el color, 
+            el tamaño, el alto del tallo, etc.
+
+            INTEGRANTES: 
+             22130628 Neo Brandon Maldonado Paz 
+             19130882 Damaso Rodrigo Aguilar Rosales 
+             20130054 Roberto Grijalva Sánchez 
+                      Juan Gerardo García Valenzuela
+             
+    
+            OBJETIVO:
+             De la Lectura complementaria sobre Algoritmos Genéticos reescriba en Python, C# o Java
+             el programa ejemplo sobre las flores que está codificado en C++
+     
+     */
+
     public partial class Form1 : Form
     {
         // Arreglo de flores
@@ -40,7 +63,11 @@ namespace AlgoritmosGeneticos
                 // El tamano del centro de la flor. De 5 a 15
                 poblacion[n].cromosoma[5] = random.Next(5, 15);
             }
+
+            //Event handler necesario para que funcione el Timer Tick
             timer1.Tick += new EventHandler(timert_Tick);
+
+            //Event handler necesario para que funciones el evento Paint con cada Tick
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
         }
 
@@ -115,7 +142,7 @@ namespace AlgoritmosGeneticos
                 poblacion[n].cromosoma[5],
                 poblacion[n].cromosoma[5]);
             }
-            lblGeneracion.Text = "Generacion:" + generacion.ToString();
+            lblGeneracion.Text = "Generacion: " + generacion.ToString();
         }
 
         private void timert_Tick(object sender, System.EventArgs e)
@@ -317,12 +344,12 @@ namespace AlgoritmosGeneticos
         private void iniciarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             timer1.Start();
-            
+            lblEstado.Text = "Estado: Ejecutandose";
         }
-
         private void detenerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            lblEstado.Text = "Estado: Detenido";
         }
     }
 }
