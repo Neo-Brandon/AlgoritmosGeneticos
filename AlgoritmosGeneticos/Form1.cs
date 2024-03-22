@@ -12,9 +12,6 @@ namespace AlgoritmosGeneticos
             // Necesario para el uso de Windows Forms
             InitializeComponent();
 
-            
-
-
             // TODO: agregar código de constructor después de
             //llamar a InitializeComponent
             Random random = new Random(unchecked((int)
@@ -43,6 +40,7 @@ namespace AlgoritmosGeneticos
                 // El tamano del centro de la flor. De 5 a 15
                 poblacion[n].cromosoma[5] = random.Next(5, 15);
             }
+            timer1.Tick += new EventHandler(timert_Tick);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
         }
 
@@ -56,7 +54,7 @@ namespace AlgoritmosGeneticos
             for (int n = 0; n < 10; n++)
             {
                 // 0-Altura
-                //1-Color de la flor
+                // 1-Color de la flor
                 // 2-Color del tallo
                 // 3-Ancho del tallo
                 // 4-Tamaño de la flor
@@ -66,10 +64,9 @@ namespace AlgoritmosGeneticos
                 //vemos el color del tallo 
                 if (poblacion[n].cromosoma[2] == 0)
                 {
-
                     e.Graphics.FillRectangle(Brushes.DarkGreen,
-                                                              poblacion[n].CoordX, 550 -
-                                                              poblacion[n].cromosoma[0],
+                    poblacion[n].CoordX, 550 -
+                    poblacion[n].cromosoma[0],
                     poblacion[n].cromosoma[3], poblacion[n].cromosoma[0]);
 
                 }
